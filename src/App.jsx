@@ -1,3 +1,4 @@
+import Filtros from './components/Filtros';
 import Navbar from './components/Navbar';
 import { db } from './db';
 
@@ -5,7 +6,8 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <ul className='grid grid-cols-2 p-4 gap-4'>
+      <Filtros />
+      <ul className='grid grid-cols-2 px-4 gap-4'>
         {db.map((vela) => (
           <div key={vela.nombre} className='border border-zinc-200 p-2'>
             <img src={vela.imagen} alt='Vela artesanal' />

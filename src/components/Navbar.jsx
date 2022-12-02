@@ -19,7 +19,7 @@ const Navbar = () => {
 
         <Menu.Items
           as='ul'
-          className='absolute text-center w-full h-full bg-black text-amber-50 shadow p-6 pt-12 right-0 top-0 whitespace-nowrap space-y-6 text-4xl'>
+          className='absolute text-center w-full h-full flex flex-col gap-10 pb-10 items-center justify-center bg-black text-amber-50 shadow right-0 top-0 whitespace-nowrap text-4xl'>
           <Menu.Button className='absolute right-4 top-6'>
             <AiOutlineClose className='w-6 h-6 text-white' />
           </Menu.Button>
