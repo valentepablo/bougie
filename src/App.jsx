@@ -1,6 +1,5 @@
-import Filtros from './components/Filtros';
 import Navbar from './components/Navbar/Navbar';
-import ProductListContainer from './components/ProductListContainer/ProductListContainer';
+import HomePage from './components/HomePage.jsx/HomePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -8,9 +7,8 @@ const App = () => {
     <Router>
       <div>
         <Navbar />
-        <Filtros />
         <Routes>
-          <Route path='/' element={<ProductListContainer />} />
+          <Route path='/' element={<HomePage />} />
         </Routes>
       </div>
     </Router>

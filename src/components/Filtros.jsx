@@ -5,13 +5,13 @@ import { HiChevronDown } from 'react-icons/hi';
 
 const Filtros = () => {
   return (
-    <Popover className='p-4 flex justify-end relative'>
-      <Popover.Button className='font-semibold flex items-center gap-1 focus:outline-none'>
-        <BsFilterRight className='w-5 h-5' />
+    <Popover className='flex justify-end relative'>
+      <Popover.Button className='font-bold uppercase text-xs flex items-center gap-1 focus:outline-none'>
+        {/* <BsFilterRight className='w-4 h-4' /> */}
         Filtrar
       </Popover.Button>
       <Popover.Overlay className='fixed inset-0 bg-black/30' />
-      <Popover.Panel className='absolute bg-white overflow-hidden rounded-md shadow w-52 right-4 top-12 divide-y divide-neutral-200'>
+      <Popover.Panel className='absolute bg-white overflow-hidden rounded-md shadow w-52 right-0 top-8 divide-y divide-neutral-200'>
         <Disclosure as='div'>
           {({ open }) => (
             <>
