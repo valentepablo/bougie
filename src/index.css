@@ -7,3 +7,15 @@
     font-family: 'Mulish', sans-serif;
   }
 }
+
+.cols-2-borders {
+  border-top: 1px solid rgb(244 244 245);
+}
+
+.cols-2-borders li {
+  border-bottom: 1px solid rgb(244 244 245);
+}
+
+.cols-2-borders li:nth-child(odd) {
+  border-right: 1px solid rgb(244 244 245);
+}
