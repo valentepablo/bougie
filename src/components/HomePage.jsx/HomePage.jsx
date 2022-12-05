@@ -4,6 +4,7 @@ import Filtros from '../Filtros';
 
 import ProductListContainer from '../ProductListContainer/ProductListContainer';
 import Section from '../Section/Section';
+import SectionHeader from '../Section/SectionHeader';
 import SectionTitle from '../Section/SectionTitle';
 
 const HomePage = () => {
@@ -11,10 +12,10 @@ const HomePage = () => {
     <>
       <Carousel />
       <Section>
-        <div className='flex items-center justify-between mb-3'>
+        <SectionHeader>
           <SectionTitle text='Productos destacados' />
           <Filtros />
-        </div>
+        </SectionHeader>
         <ProductListContainer />
       </Section>
     </>

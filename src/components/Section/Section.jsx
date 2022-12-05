@@ -1,5 +1,5 @@
 const Section = ({ children }) => {
-  return <section className='px-2 py-10'>{children}</section>;
+  return <section className='mx-4 my-10 bg-white rounded-md'>{children}</section>;
 };
 
 export default Section;
