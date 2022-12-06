@@ -3,7 +3,7 @@ export const db = [
     nombre: 'Vela Navideña',
     linea: 'navideña',
     aroma: 'lavanda',
-    imagen: './assets/images/navidad01.jpg',
+    imagen: '../public/images/navidad01.jpg',
     descripcion:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat laudantium, dolore reprehenderit vero recusandae corrupti voluptas cum iusto dolores eveniet.',
   },
@@ -11,7 +11,7 @@ export const db = [
     nombre: 'Vela de Lavanda',
     linea: 'basica',
     aroma: 'lavanda',
-    imagen: './assets/images/lavanda.jpg',
+    imagen: '../public/images/lavanda.jpg',
     descripcion:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat laudantium, dolore reprehenderit vero recusandae corrupti voluptas cum iusto dolores eveniet.',
   },
@@ -19,7 +19,7 @@ export const db = [
     nombre: 'Vela Geometrica',
     linea: 'astrologica',
     aroma: 'coco',
-    imagen: './assets/images/geometrica.jpg',
+    imagen: '../public/images/geometrica.jpg',
     descripcion:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat laudantium, dolore reprehenderit vero recusandae corrupti voluptas cum iusto dolores eveniet.',
   },
