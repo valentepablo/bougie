@@ -1,6 +1,7 @@
 export const db = [
   {
     nombre: 'Vela Navideña',
+    tipo: 'velas',
     linea: 'navideña',
     aroma: 'jazmin',
     imagen: '../images/navidad01.jpg',
@@ -9,6 +10,7 @@ export const db = [
   },
   {
     nombre: 'Vela de Lavanda',
+    tipo: 'velas',
     linea: 'basica',
     aroma: 'lavanda',
     imagen: '../images/lavanda.jpg',
@@ -17,6 +19,7 @@ export const db = [
   },
   {
     nombre: 'Vela Geometrica',
+    tipo: 'velas',
     linea: 'astrologica',
     aroma: 'vainilla',
     imagen: '../images/geometrica.jpg',
@@ -25,6 +28,7 @@ export const db = [
   },
   {
     nombre: 'Coconut',
+    tipo: 'velas',
     linea: 'espirituales',
     aroma: 'coco',
     imagen: '../images/cuenco.jpg',

@@ -6,6 +6,8 @@ import ProductListContainer from '../ProductListContainer/ProductListContainer';
 import Section from '../Section/Section';
 import SectionHeader from '../Section/SectionHeader';
 import SectionTitle from '../Section/SectionTitle';
+import SectionFooter from '../Section/SectionFooter';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
@@ -17,6 +19,11 @@ const HomePage = () => {
           <Filtros />
         </SectionHeader>
         <ProductListContainer />
+        <SectionFooter>
+          <Link to='/velas' className='text-sm font-semibold'>
+            Ver mas
+          </Link>
+        </SectionFooter>
       </Section>
     </>
   );
