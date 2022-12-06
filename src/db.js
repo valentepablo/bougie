@@ -2,7 +2,7 @@ export const db = [
   {
     nombre: 'Vela Navideña',
     linea: 'navideña',
-    aroma: 'lavanda',
+    aroma: 'jazmin',
     imagen: '../images/navidad01.jpg',
     descripcion:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat laudantium, dolore reprehenderit vero recusandae corrupti voluptas cum iusto dolores eveniet.',
@@ -18,7 +18,7 @@ export const db = [
   {
     nombre: 'Vela Geometrica',
     linea: 'astrologica',
-    aroma: 'coco',
+    aroma: 'vainilla',
     imagen: '../images/geometrica.jpg',
     descripcion:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat laudantium, dolore reprehenderit vero recusandae corrupti voluptas cum iusto dolores eveniet.',
