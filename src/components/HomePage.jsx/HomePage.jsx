@@ -16,7 +16,7 @@ const HomePage = () => {
 
       <Section>
         <SectionHeader>
-          <SectionTitle text='Nuestras lineas' />
+          <SectionTitle text='Nuestros productos' />
         </SectionHeader>
         <SectionBody>
           <div className='grid gap-4'>
@@ -38,7 +38,7 @@ const HomePage = () => {
 
       <Section>
         <SectionHeader>
-          <SectionTitle text='Productos destacados' />
+          <SectionTitle text='Velas destacadas' />
         </SectionHeader>
         <SectionBody>
           <ProductListContainer />

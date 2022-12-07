@@ -8,7 +8,7 @@ const ProductItem = ({ product }) => {
 
         <h3 className='text-lg leading-tight text-slate-200 my-2 font-lora'>{product.nombre}</h3>
 
-        <div className='rounded-lg text-zinc-600 text-xs'>
+        <div className='rounded-lg text-zinc-500 text-xs'>
           <p>
             Aroma: <span className='capitalize font-semibold'>{product.aroma}</span>
           </p>
