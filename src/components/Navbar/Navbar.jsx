@@ -5,7 +5,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 const Navbar = () => {
   return (
-    <div className='flex items-center p-4 justify-between h-20 bg-black shadow'>
+    <div className='flex items-center p-4 justify-between h-20 shadow'>
       <Link to='/'>
         <p className='font-semibold text-amber-50'>Bougie</p>
       </Link>

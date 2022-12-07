@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         mulish: "'Mulish', sans-serif",
+        lora: "'Lora', serif",
       },
     },
   },

@@ -8,14 +8,14 @@
   }
 }
 
-.cols-2-borders {
-  border-top: 1px solid rgb(235 235 235);
-}
-
-.cols-2-borders li {
-  border-bottom: 1px solid rgb(235 235 235);
-}
-
-.cols-2-borders li:nth-child(odd) {
-  border-right: 1px solid rgb(235 235 235);
+.background-radial-gradient {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    160deg,
+    hsl(240, 25%, 0%) 0%,
+    hsl(240, 25%, 1%) 20%,
+    hsl(240, 25%, 2%) 50%,
+    hsl(240, 25%, 1%) 80%,
+    hsl(240, 25%, 0%) 100%
+  );
 }

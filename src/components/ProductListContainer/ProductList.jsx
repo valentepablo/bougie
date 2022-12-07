@@ -2,7 +2,7 @@ import ProductItem from './ProductItem';
 
 const ProductList = ({ products }) => {
   return (
-    <ul className='grid grid-cols-2 md:grid-cols-4 cols-2-borders'>
+    <ul className='grid grid-cols-2 md:grid-cols-4 gap-4'>
       {products.map((product) => (
         <ProductItem key={product.nombre} product={product} />
       ))}
