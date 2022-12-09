@@ -11,6 +11,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/velas/:nombre' element={<ProductDetailContainer />} />
+          <Route path='*' element={<div className='text-white'>Pagina no encontrada</div>} />
         </Routes>
       </div>
     </Router>
