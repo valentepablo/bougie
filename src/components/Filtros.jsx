@@ -41,13 +41,13 @@ const Filtros = ({ productos, setAromaElegido }) => {
                   </Disclosure.Button>
                   <Disclosure.Panel>
                     <ul className='text-zinc-500 bg-neutral-100 space-y-3 p-4'>
-                      <li>
+                      <li onClick={() => setAromaElegido('')}>
                         <Link to='/productos/velas'>Velas</Link>
                       </li>
-                      <li>
+                      <li onClick={() => setAromaElegido('')}>
                         <Link to='/productos/difusores'>Difusores</Link>
                       </li>
-                      <li>
+                      <li onClick={() => setAromaElegido('')}>
                         <Link to='/productos/home-spray'>Home Spray</Link>
                       </li>
                     </ul>

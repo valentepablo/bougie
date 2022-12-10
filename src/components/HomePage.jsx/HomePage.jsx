@@ -30,6 +30,12 @@ const HomePage = () => {
                 Difusores
               </h3>
             </Link>
+            <Link to='/productos/home-spray' className='relative'>
+              <img src='../images/navidad01.jpg' alt='Lineas de productos' className='rounded-md' />
+              <h3 className='uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
+                Home Spray
+              </h3>
+            </Link>
           </div>
         </SectionBody>
       </Section>

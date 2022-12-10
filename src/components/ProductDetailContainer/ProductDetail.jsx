@@ -33,7 +33,7 @@ const ProductDetail = ({ product }) => {
             </button>
           </div>
         </div>
-        <button className='bg-slate-50 mb-2 uppercase text-xs text-black font-bold w-full h-12 rounded-md'>
+        <button className='bg-slate-50 mb-6 uppercase text-xs text-black font-bold w-full h-12 rounded-md'>
           Comprar ahora
         </button>
       </div>
