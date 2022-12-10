@@ -9,6 +9,15 @@ export const db = [
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat laudantium, dolore reprehenderit vero recusandae corrupti voluptas cum iusto dolores eveniet.',
   },
   {
+    nombre: 'Vela de Jazmin',
+    tipo: 'velas',
+    linea: 'basica',
+    aroma: 'jazmin',
+    imagen: '../images/navidad01.jpg',
+    descripcion:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat laudantium, dolore reprehenderit vero recusandae corrupti voluptas cum iusto dolores eveniet.',
+  },
+  {
     nombre: 'Vela de Lavanda',
     tipo: 'velas',
     linea: 'basica',
@@ -19,7 +28,7 @@ export const db = [
   },
   {
     nombre: 'Vela Geometrica',
-    tipo: 'velas',
+    tipo: 'difusores',
     linea: 'astrologica',
     aroma: 'vainilla',
     imagen: '../images/geometrica.jpg',
@@ -28,7 +37,7 @@ export const db = [
   },
   {
     nombre: 'Coconut',
-    tipo: 'velas',
+    tipo: 'home-spray',
     linea: 'espirituales',
     aroma: 'coco',
     imagen: '../images/cuenco.jpg',

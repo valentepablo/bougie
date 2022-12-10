@@ -2,11 +2,20 @@ import { Link } from 'react-router-dom';
 import { Popover, Disclosure } from '@headlessui/react';
 import { BsFilterRight } from 'react-icons/bs';
 import { HiChevronDown } from 'react-icons/hi';
+import { useEffect, useState } from 'react';
 
-const Filtros = () => {
+const Filtros = ({ productos }) => {
+  const [aromas, setAromas] = useState([]);
+
+  useEffect(() => {
+    const aromasUnicos = new Set(productos.map((producto) => producto.aroma));
+    const listaDeAromas = Array.from(aromasUnicos);
+    setAromas(listaDeAromas);
+  }, [productos]);
+
   return (
     <Popover className='flex justify-end relative'>
-      <Popover.Button className='font-bold uppercase text-xs flex items-center gap-1 focus:outline-none'>
+      <Popover.Button className='text-zinc-300 font-bold uppercase text-xs flex items-center gap-1 focus:outline-none'>
         <BsFilterRight className='w-4 h-4' />
         Filtrar
       </Popover.Button>
@@ -25,13 +34,13 @@ const Filtros = () => {
               <Disclosure.Panel>
                 <ul className='text-zinc-500 bg-neutral-100 space-y-3 p-4'>
                   <li>
-                    <Link to='/linea/basicas'>Basicas</Link>
+                    <Link to='/productos/velas'>Velas</Link>
                   </li>
                   <li>
-                    <Link to='/linea/astrologicas'>Astrologicas</Link>
+                    <Link to='/productos/difusores'>Difusores</Link>
                   </li>
                   <li>
-                    <Link to='/linea/espirituales'>Espirituales</Link>
+                    <Link to='/productos/home-spray'>Home Spray</Link>
                   </li>
                 </ul>
               </Disclosure.Panel>
@@ -51,10 +60,11 @@ const Filtros = () => {
               </Disclosure.Button>
               <Disclosure.Panel>
                 <ul className='text-zinc-500 bg-neutral-100 space-y-3 p-4'>
-                  <li>Chivo</li>
-                  <li>Pedo</li>
-                  <li>Vomito</li>
-                  <li>Rancio</li>
+                  {aromas.map((aroma) => (
+                    <li key={aroma} className='capitalize'>
+                      {aroma}
+                    </li>
+                  ))}
                 </ul>
               </Disclosure.Panel>
             </>

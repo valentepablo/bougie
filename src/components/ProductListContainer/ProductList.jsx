@@ -1,12 +1,20 @@
+import BackButton from '../BackButton';
+import Filtros from '../Filtros';
 import ProductItem from './ProductItem';
 
-const ProductList = ({ products }) => {
+const ProductList = ({ productos }) => {
   return (
-    <ul className='grid grid-cols-2 md:grid-cols-4 gap-4'>
-      {products.map((product) => (
-        <ProductItem key={product.nombre} product={product} />
-      ))}
-    </ul>
+    <>
+      <div className='px-4 flex items-center justify-between'>
+        <BackButton />
+        <Filtros productos={productos} />
+      </div>
+      <ul className='grid grid-cols-2 md:grid-cols-4 gap-4 p-4'>
+        {productos.map((product) => (
+          <ProductItem key={product.nombre} product={product} />
+        ))}
+      </ul>
+    </>
   );
 };
 

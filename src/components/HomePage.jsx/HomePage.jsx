@@ -20,23 +20,21 @@ const HomePage = () => {
         </SectionHeader>
         <SectionBody>
           <div className='grid gap-4'>
-            <div className='relative'>
+            <Link to='/productos/velas' className='relative'>
               <img src='../images/cuenco.jpg' alt='Lineas de productos' className='rounded-md' />
-              <h3 className='uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
-                Velas de cuenco
-              </h3>
-            </div>
-            <div className='relative'>
+              <h3 className='uppercase font-bold absolute bottom-5 inset-x-0 text-center'>Velas</h3>
+            </Link>
+            <Link to='/productos/difusores' className='relative'>
               <img src='../images/lavanda.jpg' alt='Lineas de productos' className='rounded-md' />
               <h3 className='uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
-                Velas de frasco
+                Difusores
               </h3>
-            </div>
+            </Link>
           </div>
         </SectionBody>
       </Section>
 
-      <Section>
+      {/* <Section>
         <SectionHeader>
           <SectionTitle text='Velas destacadas' />
         </SectionHeader>
@@ -50,7 +48,7 @@ const HomePage = () => {
             Ver mas
           </Link>
         </SectionFooter>
-      </Section>
+      </Section> */}
     </>
   );
 };

@@ -11,13 +11,13 @@ const Navbar = () => {
       </Link>
       <ul className='md:flex hidden items-center gap-4 text-amber-50'>
         <li className='py-1 px-2 cursor-pointer hover:text-amber-100'>
-          <Link to='/velas'>Velas</Link>
+          <Link to='/productos/velas'>Velas</Link>
         </li>
         <li className='py-1 px-2 cursor-pointer hover:text-amber-100'>
-          <Link to='/difusores'>Difusores</Link>
+          <Link to='/productos/difusores'>Difusores</Link>
         </li>
         <li className='py-1 px-2 cursor-pointer hover:text-amber-100'>
-          <Link to='/home-spray'>Home Spray</Link>
+          <Link to='/productos/home-spray'>Home Spray</Link>
         </li>
         <li className='py-1 px-2 cursor-pointer hover:text-amber-100'>
           <Link to='/sobre-nosotros'>Nosotros</Link>
@@ -46,7 +46,7 @@ const Navbar = () => {
                 <Menu.Item>
                   {({ close }) => (
                     <li>
-                      <Link to='/velas' onClick={close}>
+                      <Link to='/productos/velas' onClick={close}>
                         Velas
                       </Link>
                     </li>
@@ -55,7 +55,7 @@ const Navbar = () => {
                 <Menu.Item>
                   {({ close }) => (
                     <li>
-                      <Link to='/difusores' onClick={close}>
+                      <Link to='/productos/difusores' onClick={close}>
                         Difusores
                       </Link>
                     </li>
@@ -64,7 +64,7 @@ const Navbar = () => {
                 <Menu.Item>
                   {({ close }) => (
                     <li>
-                      <Link to='/home-spray' onClick={close}>
+                      <Link to='/productos/home-spray' onClick={close}>
                         Home Spray
                       </Link>
                     </li>
