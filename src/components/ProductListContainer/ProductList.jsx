@@ -21,7 +21,7 @@ const ProductList = ({ productos, categoria }) => {
         <SectionBody>
           <ul className='grid grid-cols-2 md:grid-cols-4 gap-4'>
             {productos.map((product) => (
-              <ProductItem key={product.nombre} product={product} />
+              <ProductItem key={product.categoryId} product={product} />
             ))}
           </ul>
         </SectionBody>

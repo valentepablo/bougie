@@ -99,7 +99,7 @@ export const database = {
         'mango & maracuya',
         'gardenia',
         'palo santo',
-        ' sandalo',
+        'sandalo',
       ],
       precio: 980,
       imagen: 'navidad01.jpg',

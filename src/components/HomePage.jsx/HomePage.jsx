@@ -5,6 +5,7 @@ import SectionHeader from '../Section/SectionHeader';
 import SectionBody from '../Section/SectionBody';
 import SectionTitle from '../Section/SectionTitle';
 import { Link } from 'react-router-dom';
+import { BsInstagram } from 'react-icons/bs';
 
 const HomePage = () => {
   return (
@@ -19,23 +20,34 @@ const HomePage = () => {
           <div className='grid gap-4'>
             <Link to='/productos/velas' className='relative'>
               <img src='../images/cuenco.jpg' alt='Lineas de productos' className='rounded-md' />
-              <h3 className='uppercase font-bold absolute bottom-5 inset-x-0 text-center'>Velas</h3>
+              <h3 className='text-white drop-shadow-md uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
+                Velas
+              </h3>
             </Link>
             <Link to='/productos/difusores' className='relative'>
-              <img src='../images/lavanda.jpg' alt='Lineas de productos' className='rounded-md' />
-              <h3 className='uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
+              <img src='../images/difusores.jpg' alt='Lineas de productos' className='rounded-md' />
+              <h3 className='text-white drop-shadow-md uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
                 Difusores
               </h3>
             </Link>
             <Link to='/productos/home-spray' className='relative'>
-              <img src='../images/navidad01.jpg' alt='Lineas de productos' className='rounded-md' />
-              <h3 className='uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
+              <img
+                src='../images/home-spray.jpg'
+                alt='Lineas de productos'
+                className='rounded-md'
+              />
+              <h3 className='text-white drop-shadow-md uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
                 Home Spray
               </h3>
             </Link>
           </div>
         </SectionBody>
       </Section>
+
+      <footer className='flex p-4 items-center gap-4 justify-center'>
+        <h3 className='text-sm'>Bougie Shop</h3>
+        <BsInstagram />
+      </footer>
 
       {/* <Section>
         <SectionHeader>

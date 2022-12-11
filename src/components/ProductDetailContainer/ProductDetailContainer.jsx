@@ -1,7 +1,7 @@
 import ProductDetail from './ProductDetail';
-import { database } from '../../db';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { getFirestore, getDocs, collection } from 'firebase/firestore';
 
 const ProductDetailContainer = () => {
   const [producto, setProducto] = useState();
@@ -10,11 +10,16 @@ const ProductDetailContainer = () => {
 
   useEffect(() => {
     const productName = nombre.split('-').join(' ');
-    for (const productos in database) {
-      if (database[productos].find((producto) => producto.nombre === productName)) {
-        setProducto(database[productos].find((producto) => producto.nombre === productName));
-      }
-    }
+    const db = getFirestore();
+    getDocs(collection(db, 'productos'))
+      .then((result) =>
+        result.docs.map((doc) => doc.data()).find((producto) => producto.categoryId === productName)
+      )
+      .then((result) => {
+        setProducto(result);
+        console.log(result);
+      });
+
     setLoading(false);
   }, [nombre]);
 
@@ -23,7 +28,7 @@ const ProductDetailContainer = () => {
       {loading ? (
         <div className='text-white'>Cargando...</div>
       ) : (
-        <ProductDetail producto={producto} />
+        producto && <ProductDetail producto={producto} />
       )}
     </>
   );
