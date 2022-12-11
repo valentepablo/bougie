@@ -1,32 +1,31 @@
-import { useState } from 'react';
 import BackButton from '../BackButton';
 import Filtros from '../Filtros';
+import Section from '../Section/Section';
+import SectionBody from '../Section/SectionBody';
+import SectionHeader from '../Section/SectionHeader';
+import SectionTitle from '../Section/SectionTitle';
 import ProductItem from './ProductItem';
 
-const ProductList = ({ productos }) => {
-  const [aromaElegido, setAromaElegido] = useState('');
-
+const ProductList = ({ productos, categoria }) => {
   return (
     <>
       <div className='px-4 flex items-center justify-between'>
         <BackButton />
-        <Filtros productos={productos} setAromaElegido={setAromaElegido} />
+        {/* <Filtros productos={productos} setAromaElegido={setAromaElegido} /> */}
       </div>
-      {aromaElegido ? (
-        <ul className='grid grid-cols-2 md:grid-cols-4 gap-4 p-4'>
-          {productos
-            .filter((producto) => producto.aroma === aromaElegido)
-            .map((product) => (
+
+      <Section>
+        <SectionHeader>
+          <SectionTitle text={categoria} />
+        </SectionHeader>
+        <SectionBody>
+          <ul className='grid grid-cols-2 md:grid-cols-4 gap-4'>
+            {productos.map((product) => (
               <ProductItem key={product.nombre} product={product} />
             ))}
-        </ul>
-      ) : (
-        <ul className='grid grid-cols-2 md:grid-cols-4 gap-4 p-4'>
-          {productos.map((product) => (
-            <ProductItem key={product.nombre} product={product} />
-          ))}
-        </ul>
-      )}
+          </ul>
+        </SectionBody>
+      </Section>
     </>
   );
 };

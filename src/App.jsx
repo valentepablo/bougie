@@ -11,8 +11,8 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='productos/:categoria' element={<ProductListContainer />} />
-          <Route path='/velas/:nombre' element={<ProductDetailContainer />} />
+          <Route path='/productos/:categoria' element={<ProductListContainer />} />
+          <Route path='/productos/velas/:nombre' element={<ProductDetailContainer />} />
           <Route path='*' element={<div className='text-white'>Pagina no encontrada</div>} />
         </Routes>
       </div>

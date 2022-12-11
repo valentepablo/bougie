@@ -1,4 +1,4 @@
-import { db } from '../../db';
+import { database } from '../../db';
 import ProductList from './ProductList';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -8,11 +8,11 @@ const ProductListContainer = () => {
   const { categoria } = useParams();
 
   useEffect(() => {
-    const filtrados = db.filter((productos) => productos.tipo === categoria);
+    const filtrados = database[`${categoria}`];
     setProductosFiltrados(filtrados);
   }, [categoria]);
 
-  return <ProductList productos={productosFiltrados} />;
+  return <ProductList productos={productosFiltrados} categoria={categoria} />;
 };
 
 export default ProductListContainer;

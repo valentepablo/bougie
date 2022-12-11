@@ -1,13 +1,10 @@
 import 'tw-elements';
 import Carousel from '../Carousel/Carousel';
-
-import ProductListContainer from '../ProductListContainer/ProductListContainer';
 import Section from '../Section/Section';
 import SectionHeader from '../Section/SectionHeader';
-import SectionTitle from '../Section/SectionTitle';
-import SectionFooter from '../Section/SectionFooter';
-import { Link } from 'react-router-dom';
 import SectionBody from '../Section/SectionBody';
+import SectionTitle from '../Section/SectionTitle';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
