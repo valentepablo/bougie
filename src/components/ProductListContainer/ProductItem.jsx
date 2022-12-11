@@ -9,7 +9,7 @@ const ProductItem = ({ product }) => {
       <li className=' text-center'>
         <img src={`../images/${product.imagen}`} alt={product.nombre} className='rounded' />
 
-        <h3 className='capitalize text-lg leading-tight text-slate-200 my-2 font-lora'>
+        <h3 className='capitalize text-lg leading-tight font-semibold my-2 font-lora'>
           {product.nombre}
         </h3>
 

@@ -6,7 +6,7 @@ const BackButton = () => {
 
   return (
     <button
-      className='text-zinc-300 font-bold uppercase flex items-center gap-1'
+      className='text-zinc-900 font-bold uppercase flex items-center gap-1'
       onClick={() => navigate(-1)}>
       <HiOutlineArrowNarrowLeft />
       <span className='text-xs'>Volver</span>

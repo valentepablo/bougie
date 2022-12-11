@@ -9,7 +9,7 @@ import ProductItem from './ProductItem';
 const ProductList = ({ productos, categoria }) => {
   return (
     <>
-      <div className='px-4 flex items-center justify-between'>
+      <div className='pt-4 px-4 flex items-center justify-between'>
         <BackButton />
         {/* <Filtros productos={productos} setAromaElegido={setAromaElegido} /> */}
       </div>

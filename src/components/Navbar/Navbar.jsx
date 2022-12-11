@@ -5,7 +5,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 const Navbar = () => {
   return (
-    <div className='fixed inset-x-0 top-0 bg-black flex items-center px-4 justify-between h-20 z-10 text-zinc-200'>
+    <div className='fixed inset-x-0 top-0 bg-zinc-200 shadow-lg flex items-center px-4 justify-between h-20 z-10 text-zinc-900'>
       <Link to='/'>
         <p className='font-semibold'>Bougie</p>
       </Link>
@@ -38,8 +38,8 @@ const Navbar = () => {
               <Menu.Items
                 static
                 as='ul'
-                className='absolute text-center w-full h-screen flex flex-col gap-10 pb-20 items-center justify-center bg-black inset-x-0 top-0 whitespace-nowrap text-4xl'>
-                <Menu.Button className='absolute right-8 top-6'>
+                className='absolute text-center w-full h-screen flex flex-col gap-10 pb-20 items-center justify-center bg-zinc-200 inset-x-0 top-0 whitespace-nowrap text-4xl'>
+                <Menu.Button className='absolute right-4 top-6'>
                   <AiOutlineClose className='w-6 h-6' />
                 </Menu.Button>
                 <Menu.Item>

@@ -8,36 +8,36 @@ const ProductDetail = ({ producto }) => {
   const [aromaElegido, setAromaElegido] = useState('Elegir');
 
   return (
-    <div className='text-slate-200 px-4 pb-2'>
+    <div className='pt-4 px-4 pb-2'>
       <div className='mb-4'>
         <BackButton />
       </div>
 
       <img src={`../../images/${producto.imagen}`} alt={producto.nombre} className='rounded' />
       <h2 className='capitalize text-3xl mt-3 font-lora'>{producto.nombre}</h2>
-      <div className='mt-2 pt-2 border-t border-zinc-800' />
+      <div className='mt-2 pt-2 border-t border-zinc-400' />
 
-      <p className='text-zinc-400 text-xs uppercase'>{producto.linea}</p>
+      <p className='text-zinc-500 text-xs uppercase'>{producto.linea}</p>
 
       <Listbox as='div' className='mt-1 relative' value={aromaElegido} onChange={setAromaElegido}>
-        <Listbox.Label className='text-zinc-400 text-xs uppercase pr-2'>
+        <Listbox.Label className='text-zinc-500 text-xs uppercase pr-2'>
           Selecciona un aroma:
         </Listbox.Label>
-        <Listbox.Button className='capitalize text-sm font-bold text-zinc-300'>
+        <Listbox.Button className='capitalize text-sm font-bold text-zinc-700'>
           {aromaElegido}
         </Listbox.Button>
-        <Listbox.Options className='absolute inset-x-0 -top-1/2 -translate-y-1/2 space-y-3 p-3 bg-zinc-900 rounded-md capitalize text-center text-zinc-300'>
+        <Listbox.Options className='absolute inset-x-0 -top-1/2 -translate-y-1/2 bg-zinc-900 rounded-md divide-y divide-zinc-800 capitalize text-center text-zinc-400'>
           {producto.aromas.map((aroma) => (
-            <Listbox.Option value={aroma} key={aroma}>
+            <Listbox.Option value={aroma} key={aroma} className='py-1'>
               {aroma}
             </Listbox.Option>
           ))}
         </Listbox.Options>
       </Listbox>
 
-      <p className='mt-3 text-zinc-400'>{producto.descripcion}</p>
+      <p className='mt-3 text-zinc-500'>{producto.descripcion}</p>
       <div className='mt-6'>
-        <div className='flex items-center justify-between mb-3 pl-3 bg-slate-100/5 h-12 rounded-md'>
+        <div className='flex items-center justify-between mb-3 pl-3 bg-zinc-200 h-12 rounded-md'>
           <div className='flex items-center'>
             <p className='text-sm mr-2'>Cantidad:</p>
             <span className='text-sm font-bold'>{quantity}</span>
@@ -51,7 +51,7 @@ const ProductDetail = ({ producto }) => {
             </button>
           </div>
         </div>
-        <button className='bg-slate-50 mb-6 uppercase text-xs text-black font-bold w-full h-12 rounded-md'>
+        <button className='bg-black mb-6 uppercase text-xs text-zinc-200 font-bold w-full h-12 rounded-md'>
           Comprar ahora
         </button>
       </div>
