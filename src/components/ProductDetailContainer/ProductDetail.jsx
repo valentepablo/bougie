@@ -26,7 +26,7 @@ const ProductDetail = ({ producto }) => {
         <Listbox.Button className='capitalize text-sm font-bold text-zinc-300'>
           {aromaElegido}
         </Listbox.Button>
-        <Listbox.Options className='absolute inset-x-0 -top-32 space-y-3 p-3 bg-zinc-900 rounded-md capitalize text-center text-zinc-300'>
+        <Listbox.Options className='absolute inset-x-0 -top-1/2 -translate-y-1/2 space-y-3 p-3 bg-zinc-900 rounded-md capitalize text-center text-zinc-300'>
           {producto.aromas.map((aroma) => (
             <Listbox.Option value={aroma} key={aroma}>
               {aroma}
