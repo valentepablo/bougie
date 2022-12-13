@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [categorias, setCategorias] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const db = getFirestore();
@@ -41,11 +42,14 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <button className='md:hidden peer relative z-40'>
+      <button onClick={() => setOpen(!open)} className='md:hidden relative z-40'>
         <HiMenu className='w-6 h-6' />
       </button>
 
-      <div className='md:hidden fixed top-0 left-0 bg-white h-screen w-3/4 shadow-2xl peer-focus:left-0 peer:transition duration-200 delay-150 ease-out z-30'>
+      <div
+        className={` ${
+          open ? 'left-0' : '-left-[600px]'
+        } md:hidden fixed top-0 bg-white h-screen w-3/4 shadow-2xl transition duration-200 delay-150 ease-out z-30`}>
         <div className='h-20 flex items-center px-4 border-b'>
           <p className='font-semibold'>Bougie</p>
         </div>
