@@ -86,8 +86,8 @@ const Navbar = () => {
       <div
         onClick={() => setOpen(!open)}
         className={`${
-          open ? 'opacity-100 pointer-events-auto transition' : 'pointer-events-none'
-        } md:hidden fixed top-0 left-0 w-screen h-screen opacity-0 duration-200 bg-zinc-900/50 z-20`}></div>
+          open ? 'opacity-100 pointer-events-auto transition' : 'pointer-events-none opacity-0'
+        } md:hidden fixed top-0 left-0 w-screen h-screen duration-200 bg-zinc-900/50 z-20`}></div>
       {/* <Menu as='div' className='md:hidden'>
         {({ open }) => (
           <>
