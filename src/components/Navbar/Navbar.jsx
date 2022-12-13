@@ -41,11 +41,11 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <button className='md:hidden peer relative z-30'>
+      <button className='md:hidden peer relative z-40'>
         <HiMenu className='w-6 h-6' />
       </button>
 
-      <div className='md:hidden fixed top-0 -left-[600px] bg-white h-screen w-3/4 shadow-2xl peer-focus:left-0 peer:transition duration-200 delay-150 ease-out z-20'>
+      <div className='md:hidden fixed top-0 -left-[600px] bg-white h-screen w-3/4 shadow-2xl peer-focus:left-0 peer:transition duration-200 delay-150 ease-out z-30'>
         <div className='h-20 flex items-center px-4 border-b'>
           <p className='font-semibold'>Bougie</p>
         </div>
@@ -69,7 +69,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className='md:hidden fixed top-0 left-0 w-screen h-screen opacity-0 peer-focus:opacity-100 peer:transition duration-200 bg-zinc-900/50 z-10'></div>
+      <div className='md:hidden fixed top-0 left-0 w-screen h-screen opacity-0 pointer-events-none peer-focus:pointer-events-auto  peer-focus:opacity-100 peer:transition duration-200 bg-zinc-900/50 z-20'></div>
       {/* <Menu as='div' className='md:hidden'>
         {({ open }) => (
           <>
