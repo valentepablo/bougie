@@ -47,9 +47,9 @@ const Navbar = () => {
       </button>
 
       <div
-        className={` ${
-          open ? 'left-0' : '-left-[600px]'
-        } md:hidden fixed top-0 bg-white h-screen w-3/4 shadow-2xl transition duration-200 delay-150 ease-out z-30`}>
+        className={`${
+          open ? 'translate-x-0' : '-translate-x-[600px]'
+        } md:hidden fixed left-0 top-0 bg-white h-screen w-3/4 shadow-xl transition duration-300 delay-150 ease-out z-30`}>
         <div className='h-20 flex items-center px-4 border-b'>
           <p className='font-semibold'>Bougie</p>
         </div>
@@ -57,23 +57,37 @@ const Navbar = () => {
           {categorias
             .filter((categoria) => categoria.parentId === null)
             .map((categoria) => (
-              <li className='capitalize ' key={categoria.id}>
-                <Link to={`/productos/${categoria.categoryId.split(' ').join('-')}`}>
-                  {categoria.categoryId}
+              <li onClick={() => setOpen(!open)} key={categoria.id}>
+                <Link
+                  className='flex items-center gap-4'
+                  to={`/productos/${categoria.categoryId.split(' ').join('-')}`}>
+                  <img className='w-8 h-8' src={`../images/${categoria.icon}`} />
+                  <span className='capitalize'>{categoria.categoryId}</span>
                 </Link>
               </li>
             ))}
 
-          <li className=''>
-            <Link to='/sobre-nosotros'>Nosotros</Link>
+          <div className='border-t'></div>
+          <li onClick={() => setOpen(!open)}>
+            <Link className='flex items-center gap-4' to='/sobre-nosotros'>
+              <div className='w-8 h-8'></div>
+              <span>Nosotros</span>
+            </Link>
           </li>
-          <li className=''>
-            <Link to='/contacto'>Contacto</Link>
+          <li onClick={() => setOpen(!open)}>
+            <Link className='flex items-center gap-4' to='/contacto'>
+              <div className='w-8 h-8'></div>
+              <span>Contacto</span>
+            </Link>
           </li>
         </ul>
       </div>
 
-      <div className='md:hidden fixed top-0 left-0 w-screen h-screen opacity-0 pointer-events-none peer-focus:pointer-events-auto  peer-focus:opacity-100 peer:transition duration-200 bg-zinc-900/50 z-20'></div>
+      <div
+        onClick={() => setOpen(!open)}
+        className={`${
+          open ? 'opacity-100 pointer-events-auto transition' : 'pointer-events-none'
+        } md:hidden fixed top-0 left-0 w-screen h-screen opacity-0 duration-200 bg-zinc-900/50 z-20`}></div>
       {/* <Menu as='div' className='md:hidden'>
         {({ open }) => (
           <>

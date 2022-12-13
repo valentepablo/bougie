@@ -17,7 +17,6 @@ const ProductDetailContainer = () => {
       )
       .then((result) => {
         setProducto(result);
-        console.log(result);
       });
 
     setLoading(false);
