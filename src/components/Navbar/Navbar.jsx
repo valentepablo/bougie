@@ -84,8 +84,10 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <div className='absolute bottom-4 inset-x-4 border-t pt-4'>
-            <button className='bg-black uppercase text-xs text-zinc-200 font-bold w-full h-12 rounded-md'>
+          <div className='border-t pt-6 px-4'>
+            <button
+              onClick={() => setOpen(!open)}
+              className='bg-black uppercase text-xs text-zinc-200 font-bold w-full h-12 rounded-md'>
               Ver carrito
             </button>
           </div>
