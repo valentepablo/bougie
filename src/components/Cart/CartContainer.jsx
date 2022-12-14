@@ -14,6 +14,7 @@ const CartContainer = () => {
         className={`${
           open ? 'pointer-events-auto' : 'pointer-events-none hidden'
         } fixed top-0 left-0 h-screen w-screen bg-zinc-900/50 z-40`}></div>
+
       <div
         className={`${
           open ? 'translate-x-0' : 'translate-x-[600px]'
@@ -31,7 +32,7 @@ const CartContainer = () => {
           <CartItem />
         </div>
 
-        <div className='flex justify-between items-center bg-white border-t px-4 py-3 reverse-shadow-md'>
+        <div className='flex justify-between items-center bg-white border-t px-4 pt-3 pb-10 reverse-shadow-md'>
           <p>Precio total:</p>
           <p>$10.250</p>
         </div>
