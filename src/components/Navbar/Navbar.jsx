@@ -15,6 +15,8 @@ const Navbar = () => {
     });
   }, []);
 
+  open ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto');
+
   return (
     <div className='fixed inset-x-0 top-0 bg-zinc-200 shadow-lg flex items-center px-4 justify-between h-20 z-10 text-zinc-900'>
       <Link to='/'>
@@ -53,34 +55,41 @@ const Navbar = () => {
             <p className='font-semibold'>Bougie</p>
           </Link>
         </div>
-        <ul className='flex flex-col gap-6 px-4 py-6 text-xl'>
-          {categorias
-            .filter((categoria) => categoria.parentId === null)
-            .map((categoria) => (
-              <li onClick={() => setOpen(!open)} key={categoria.id}>
-                <Link
-                  className='flex items-center gap-4'
-                  to={`/productos/${categoria.categoryId.split(' ').join('-')}`}>
-                  <img className='w-8 h-8' src={`../images/${categoria.icon}`} />
-                  <span className='capitalize'>{categoria.categoryId}</span>
-                </Link>
-              </li>
-            ))}
+        <div className='justify-between'>
+          <ul className='flex flex-col gap-6 px-4 py-6 text-xl'>
+            {categorias
+              .filter((categoria) => categoria.parentId === null)
+              .map((categoria) => (
+                <li onClick={() => setOpen(!open)} key={categoria.id}>
+                  <Link
+                    className='flex items-center gap-4'
+                    to={`/productos/${categoria.categoryId.split(' ').join('-')}`}>
+                    <img className='w-8 h-8' src={`../images/${categoria.icon}`} />
+                    <span className='capitalize'>{categoria.categoryId}</span>
+                  </Link>
+                </li>
+              ))}
+            <div className='border-t'></div>
+            <li onClick={() => setOpen(!open)}>
+              <Link className='flex items-center gap-4' to='/sobre-nosotros'>
+                <div className='w-8 h-8'></div>
+                <span>Nosotros</span>
+              </Link>
+            </li>
+            <li onClick={() => setOpen(!open)}>
+              <Link className='flex items-center gap-4' to='/contacto'>
+                <div className='w-8 h-8'></div>
+                <span>Contacto</span>
+              </Link>
+            </li>
+          </ul>
 
-          <div className='border-t'></div>
-          <li onClick={() => setOpen(!open)}>
-            <Link className='flex items-center gap-4' to='/sobre-nosotros'>
-              <div className='w-8 h-8'></div>
-              <span>Nosotros</span>
-            </Link>
-          </li>
-          <li onClick={() => setOpen(!open)}>
-            <Link className='flex items-center gap-4' to='/contacto'>
-              <div className='w-8 h-8'></div>
-              <span>Contacto</span>
-            </Link>
-          </li>
-        </ul>
+          <div className='absolute bottom-4 inset-x-4 border-t pt-4'>
+            <button className='bg-black uppercase text-xs text-zinc-200 font-bold w-full h-12 rounded-md'>
+              Ver carrito
+            </button>
+          </div>
+        </div>
       </div>
 
       <div
