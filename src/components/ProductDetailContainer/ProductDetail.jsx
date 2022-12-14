@@ -32,19 +32,30 @@ const ProductDetail = ({ producto }) => {
       <p className='text-zinc-500 text-xs uppercase'>{producto.tipo}</p>
 
       <Listbox as='div' className='' value={aromaElegido} onChange={setAromaElegido}>
-        <Listbox.Label className='text-zinc-500 text-xs uppercase pr-2'>
-          Selecciona un aroma:
-        </Listbox.Label>
-        <Listbox.Button className='bg-zinc-200 px-2 py-1 rounded-md capitalize text-sm font-bold text-zinc-700'>
-          {aromaElegido}
-        </Listbox.Button>
-        <Listbox.Options className='absolute left-0 bottom-0 w-screen h-[250px] overflow-y-scroll bg-zinc-900 rounded-t-md divide-y divide-zinc-800 capitalize text-center text-zinc-400'>
-          {producto.aromas.map((aroma) => (
-            <Listbox.Option value={aroma} key={aroma} className='py-1'>
-              {aroma}
-            </Listbox.Option>
-          ))}
-        </Listbox.Options>
+        {({ open }) => (
+          <>
+            <Listbox.Label className='text-zinc-500 text-xs uppercase pr-2'>
+              Selecciona un aroma:
+            </Listbox.Label>
+            <Listbox.Button className='bg-zinc-200 px-2 py-1 rounded-md capitalize text-sm font-bold text-zinc-700'>
+              {aromaElegido}
+            </Listbox.Button>
+            {open && (
+              <>
+                <div className='fixed left-0 top-0 w-screen h-screen bg-zinc-900/50 z-30'></div>
+                <Listbox.Options
+                  static
+                  className='fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex flex-col justify-center h-max max-h-64 w-3/4 overflow-y-scroll bg-zinc-900 rounded-md divide-y divide-zinc-800 capitalize text-center text-zinc-400 z-40'>
+                  {producto.aromas.map((aroma) => (
+                    <Listbox.Option value={aroma} key={aroma} className='py-1.5'>
+                      {aroma}
+                    </Listbox.Option>
+                  ))}
+                </Listbox.Options>
+              </>
+            )}
+          </>
+        )}
       </Listbox>
 
       <p className='mt-3 text-zinc-500'>{producto.descripcion}</p>
