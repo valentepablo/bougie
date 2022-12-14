@@ -13,7 +13,9 @@ const ProductDetailContainer = () => {
     const db = getFirestore();
     getDocs(collection(db, 'productos'))
       .then((result) =>
-        result.docs.map((doc) => doc.data()).find((producto) => producto.categoryId === productName)
+        result.docs
+          .map((doc) => ({ id: doc.id, ...doc.data() }))
+          .find((producto) => producto.categoryId === productName)
       )
       .then((result) => {
         setProducto(result);

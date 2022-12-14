@@ -3,7 +3,7 @@ import { CartContext } from '../../context/CartContext';
 import CartItem from './CartItem';
 
 const CartContainer = () => {
-  const { open, openCart } = useContext(CartContext);
+  const { open, openCart, products } = useContext(CartContext);
 
   open ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto');
 
@@ -23,13 +23,8 @@ const CartContainer = () => {
           Carrito de compras
         </div>
 
-        <div className='overflow-y-scroll grow grid gap-1.5'>
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
+        <div className='overflow-y-scroll grow flex flex-col gap-1.5'>
+          {products && products.map((product) => <CartItem key={product.id} product={product} />)}
         </div>
 
         <div className='flex justify-between items-center bg-white border-t px-4 py-3  reverse-shadow-md'>

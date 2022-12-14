@@ -1,17 +1,21 @@
 import { Listbox, Transition } from '@headlessui/react';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import BackButton from '../BackButton';
 import Section from '../Section/Section';
 import SectionHeader from '../Section/SectionHeader';
 import SectionBody from '../Section/SectionBody';
+import { CartContext } from '../../context/CartContext';
 
 const ProductDetail = ({ producto }) => {
+  const { addItemToCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(0);
   const [aromaElegido, setAromaElegido] = useState('Elegir');
 
-  const checkout = () => {
-    const orden = {
+  const addItem = () => {
+    const newItem = {
+      nombre: producto.nombre,
+      imagen: producto.imagen,
       tipo: producto.tipo,
       linea: producto.categoryId,
       aroma: aromaElegido,
@@ -19,7 +23,7 @@ const ProductDetail = ({ producto }) => {
       precio: producto.precio * quantity,
     };
 
-    console.log(orden);
+    addItemToCart(newItem);
   };
 
   return (
@@ -103,7 +107,7 @@ const ProductDetail = ({ producto }) => {
               </div>
             </div>
             <button
-              onClick={checkout}
+              onClick={addItem}
               className='bg-black mb-6 uppercase text-xs text-zinc-200 font-bold w-full h-12 rounded-md'>
               Comprar ahora
             </button>
