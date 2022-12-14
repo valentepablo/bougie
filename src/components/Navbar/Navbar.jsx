@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { HiMenu } from 'react-icons/hi';
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
 const Navbar = () => {
+  const { openCart } = useContext(CartContext);
   const [categorias, setCategorias] = useState([]);
   const [open, setOpen] = useState(false);
 
@@ -86,7 +88,10 @@ const Navbar = () => {
 
           <div className='border-t pt-6 px-4'>
             <button
-              onClick={() => setOpen(!open)}
+              onClick={() => {
+                setOpen(!open);
+                openCart();
+              }}
               className='bg-black uppercase text-xs text-zinc-200 font-bold w-full h-12 rounded-md'>
               Ver carrito
             </button>
