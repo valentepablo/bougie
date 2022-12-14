@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Menu } from '@headlessui/react';
 import { HiMenu } from 'react-icons/hi';
-import { AiOutlineClose } from 'react-icons/ai';
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
 import { useState, useEffect } from 'react';
 
@@ -51,7 +49,9 @@ const Navbar = () => {
           open ? 'translate-x-0' : '-translate-x-[600px]'
         } md:hidden fixed left-0 top-0 bg-white h-screen w-3/4 shadow-xl transition duration-300 delay-150 ease-out z-30`}>
         <div className='h-20 flex items-center px-4 border-b'>
-          <p className='font-semibold'>Bougie</p>
+          <Link to='/' onClick={() => setOpen(!open)}>
+            <p className='font-semibold'>Bougie</p>
+          </Link>
         </div>
         <ul className='flex flex-col gap-6 px-4 py-6 text-xl'>
           {categorias
@@ -88,63 +88,6 @@ const Navbar = () => {
         className={`${
           open ? 'opacity-100 pointer-events-auto transition' : 'pointer-events-none opacity-0'
         } md:hidden fixed top-0 left-0 w-screen h-screen duration-200 bg-zinc-900/50 z-20`}></div>
-      {/* <Menu as='div' className='md:hidden'>
-        {({ open }) => (
-          <>
-            <Menu.Button>
-              <HiMenu className='w-6 h-6' />
-            </Menu.Button>
-
-            {open && (
-              <Menu.Items
-                static
-                as='ul'
-                className='absolute text-center w-full h-screen flex flex-col gap-10 pb-20 items-center justify-center bg-zinc-200 inset-x-0 top-0 whitespace-nowrap text-4xl'>
-                <Menu.Button className='absolute right-4 top-6'>
-                  <AiOutlineClose className='w-6 h-6' />
-                </Menu.Button>
-                {categorias &&
-                  categorias
-                    .filter((categoria) => categoria.parentId === null)
-                    .map((categoria) => (
-                      <Menu.Item key={categoria.id}>
-                        {(close) => (
-                          <li className='capitalize'>
-                            <Link
-                              to={`/productos/${categoria.categoryId.split(' ').join('-')}`}
-                              onClick={() => {
-                                close();
-                              }}>
-                              {categoria.categoryId}
-                            </Link>
-                          </li>
-                        )}
-                      </Menu.Item>
-                    ))}
-
-                <Menu.Item>
-                  {({ close }) => (
-                    <li>
-                      <Link to='/sobre-nosotros' onClick={close}>
-                        Nosotros
-                      </Link>
-                    </li>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ close }) => (
-                    <li>
-                      <Link to='/contacto' onClick={close}>
-                        Contacto
-                      </Link>
-                    </li>
-                  )}
-                </Menu.Item>
-              </Menu.Items>
-            )}
-          </>
-        )}
-      </Menu> */}
     </div>
   );
 };

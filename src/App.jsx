@@ -13,6 +13,8 @@ const App = () => {
           <Route path='/' element={<HomePage />} />
           <Route path='/productos/:categoria' element={<ProductListContainer />} />
           <Route path='/productos/velas/:nombre' element={<ProductDetailContainer />} />
+          <Route path='/productos/difusores/:nombre' element={<ProductDetailContainer />} />
+          <Route path='/productos/home-spray/:nombre' element={<ProductDetailContainer />} />
           <Route path='*' element={<div className='text-white'>Pagina no encontrada</div>} />
         </Routes>
       </div>

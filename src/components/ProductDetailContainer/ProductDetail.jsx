@@ -20,7 +20,7 @@ const ProductDetail = ({ producto }) => {
   };
 
   return (
-    <div className='pt-4 px-4 pb-2'>
+    <div className='relative pt-4 px-4 pb-2'>
       <div className='mb-4'>
         <BackButton />
       </div>
@@ -31,14 +31,14 @@ const ProductDetail = ({ producto }) => {
 
       <p className='text-zinc-500 text-xs uppercase'>{producto.tipo}</p>
 
-      <Listbox as='div' className='relative' value={aromaElegido} onChange={setAromaElegido}>
+      <Listbox as='div' className='' value={aromaElegido} onChange={setAromaElegido}>
         <Listbox.Label className='text-zinc-500 text-xs uppercase pr-2'>
           Selecciona un aroma:
         </Listbox.Label>
         <Listbox.Button className='bg-zinc-200 px-2 py-1 rounded-md capitalize text-sm font-bold text-zinc-700'>
           {aromaElegido}
         </Listbox.Button>
-        <Listbox.Options className='absolute inset-x-0 -top-1/2 -translate-y-1/2 bg-zinc-900 rounded-md divide-y divide-zinc-800 capitalize text-center text-zinc-400'>
+        <Listbox.Options className='absolute left-0 bottom-0 w-screen h-[250px] overflow-y-scroll bg-zinc-900 rounded-t-md divide-y divide-zinc-800 capitalize text-center text-zinc-400'>
           {producto.aromas.map((aroma) => (
             <Listbox.Option value={aroma} key={aroma} className='py-1'>
               {aroma}
