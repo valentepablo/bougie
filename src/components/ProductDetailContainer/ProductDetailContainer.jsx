@@ -27,7 +27,7 @@ const ProductDetailContainer = () => {
   return (
     <>
       {loading ? (
-        <div className='text-white'>Cargando...</div>
+        <div className='text-center mt-10'>Cargando...</div>
       ) : (
         producto && <ProductDetail producto={producto} />
       )}

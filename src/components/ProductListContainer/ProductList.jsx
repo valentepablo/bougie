@@ -15,9 +15,10 @@ const ProductList = ({ productos, categoria }) => {
         </SectionHeader>
         <SectionBody>
           <ul className='grid grid-cols-2 md:grid-cols-4 gap-4'>
-            {productos.map((product) => (
-              <ProductItem key={product.categoryId} product={product} />
-            ))}
+            {productos &&
+              productos.map((product) => (
+                <ProductItem key={product.categoryId} product={product} />
+              ))}
           </ul>
         </SectionBody>
       </Section>
