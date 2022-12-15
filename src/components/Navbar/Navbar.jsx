@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <div className='fixed inset-x-0 top-0 bg-zinc-200 shadow-lg flex items-center px-4 justify-between h-20 z-10 text-zinc-900'>
       <Link to='/'>
-        <p className='font-semibold'>Bougie</p>
+        <img src='../bougie-logo.png' className='w-24' />
       </Link>
 
       <ul className='md:flex hidden items-center gap-4'>
@@ -55,7 +55,7 @@ const Navbar = () => {
         } md:hidden fixed left-0 top-0 bg-white h-screen w-3/4 shadow-xl transition duration-300 delay-150 ease-out z-30`}>
         <div className='h-20 flex items-center px-4 border-b'>
           <Link to='/' onClick={() => setOpen(!open)}>
-            <p className='font-semibold'>Bougie</p>
+            <img src='../bougie-logo.png' className='w-24' />
           </Link>
         </div>
         <div className='justify-between'>
