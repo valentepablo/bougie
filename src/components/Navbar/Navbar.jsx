@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { HiMenu } from 'react-icons/hi';
+import { FiShoppingCart } from 'react-icons/fi';
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
 import { useState, useEffect, useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
@@ -92,8 +93,9 @@ const Navbar = () => {
                 setOpen(!open);
                 openCart();
               }}
-              className='bg-black uppercase text-xs text-zinc-200 font-bold w-full h-12 rounded-md'>
-              Ver carrito
+              className='bg-black flex items-center justify-center gap-2 text-zinc-200 font-bold w-full h-12 rounded-md'>
+              <FiShoppingCart />
+              <span className='uppercase text-xs'>Ver carrito</span>
             </button>
           </div>
         </div>

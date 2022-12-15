@@ -8,11 +8,13 @@ import SectionBody from '../Section/SectionBody';
 import { CartContext } from '../../context/CartContext';
 
 const ProductDetail = ({ producto }) => {
-  const { addItemToCart } = useContext(CartContext);
-  const [quantity, setQuantity] = useState(0);
+  const { addItemToCart, currencyFormatter } = useContext(CartContext);
+  const [quantity, setQuantity] = useState(1);
   const [aromaElegido, setAromaElegido] = useState('Elegir');
 
   const addItem = () => {
+    if (aromaElegido === 'Elegir') return;
+
     const newItem = {
       nombre: producto.nombre,
       imagen: producto.imagen,
@@ -20,10 +22,22 @@ const ProductDetail = ({ producto }) => {
       linea: producto.categoryId,
       aroma: aromaElegido,
       cantidad: quantity,
-      precio: producto.precio * quantity,
+      precio: producto.precio,
+      id: `${producto.id}-${aromaElegido}`,
     };
 
     addItemToCart(newItem);
+
+    console.log('item agregado al carrito');
+  };
+
+  const increaseQuantity = () => {
+    setQuantity((quantity) => quantity + 1);
+  };
+
+  const decreaseQuantity = () => {
+    if (quantity === 1) return;
+    setQuantity((quantity) => quantity - 1);
   };
 
   return (
@@ -89,19 +103,21 @@ const ProductDetail = ({ producto }) => {
 
           <p className='mt-3 text-zinc-500'>{producto.descripcion}</p>
           <p className='mt-3 font-semibold text-zinc-500'>
-            $<span className='text-xl text-zinc-800'>{producto.precio}</span>
+            <span className='text-xl text-zinc-800'>
+              {currencyFormatter.format(producto.precio)}
+            </span>
           </p>
           <div className='mt-6'>
-            <div className='flex items-center justify-between mb-3 pl-3 bg-zinc-200 h-12 rounded-md'>
+            <div className='flex items-center justify-between mb-3 px-3 bg-zinc-200 h-12 rounded-md'>
               <div className='flex items-center'>
                 <p className='text-sm mr-2'>Cantidad:</p>
                 <span className='text-sm font-bold'>{quantity}</span>
               </div>
               <div className='flex gap-3'>
-                <button className='p-2' onClick={() => setQuantity((quantity) => quantity - 1)}>
+                <button className='p-2 bg-black/5 rounded' onClick={decreaseQuantity}>
                   <HiChevronLeft />
                 </button>
-                <button className='p-2' onClick={() => setQuantity((quantity) => quantity + 1)}>
+                <button className='p-2 bg-black/5 rounded' onClick={increaseQuantity}>
                   <HiChevronRight />
                 </button>
               </div>
