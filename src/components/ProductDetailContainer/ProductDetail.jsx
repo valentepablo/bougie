@@ -23,12 +23,11 @@ const ProductDetail = ({ producto }) => {
       aroma: aromaElegido,
       cantidad: quantity,
       precio: producto.precio,
-      id: `${producto.id}-${aromaElegido}`,
+      id: `${producto.id}-${aromaElegido.split(' ').join('-')}`,
     };
 
-    addItemToCart(newItem);
-
-    console.log('item agregado al carrito');
+    // console.log(newItem);
+    addItemToCart(newItem, quantity);
   };
 
   const increaseQuantity = () => {
