@@ -1,5 +1,5 @@
 const SectionFooter = ({ children }) => {
-  return <div className='border-b border-zinc-900 '>{children}</div>;
+  return <footer className='border-b border-zinc-900 '>{children}</footer>;
 };
 
 export default SectionFooter;

@@ -1,5 +1,5 @@
 const SectionBody = ({ children }) => {
-  return <div className='py-2'>{children}</div>;
+  return <article className='py-2'>{children}</article>;
 };
 
 export default SectionBody;

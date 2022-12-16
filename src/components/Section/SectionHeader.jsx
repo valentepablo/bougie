@@ -1,5 +1,5 @@
 const SectionHeader = ({ children }) => {
-  return <div className='flex h-8 items-center justify-between'>{children}</div>;
+  return <header className='flex h-8 items-center justify-between'>{children}</header>;
 };
 
 export default SectionHeader;

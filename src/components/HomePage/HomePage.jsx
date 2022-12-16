@@ -19,14 +19,22 @@ const HomePage = () => {
         <SectionBody>
           <div className='grid gap-4'>
             <Link to='/productos/velas' className='relative'>
-              <img src='../images/cuenco.jpg' alt='Lineas de productos' className='rounded-md' />
-              <h3 className='text-white drop-shadow-md uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
+              <img
+                src='../images/frascos.jpg'
+                alt='Lineas de productos'
+                className='rounded-md h-96 aspect-square object-cover'
+              />
+              <h3 className='text-white drop-shadow-md bg-black/60 py-1 uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
                 Velas
               </h3>
             </Link>
             <Link to='/productos/difusores' className='relative'>
-              <img src='../images/difusores.jpg' alt='Lineas de productos' className='rounded-md' />
-              <h3 className='text-white drop-shadow-md uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
+              <img
+                src='../images/difusores.jpg'
+                alt='Lineas de productos'
+                className='rounded-md h-96 aspect-square object-cover'
+              />
+              <h3 className='text-white drop-shadow-md bg-black/60 py-1 uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
                 Difusores
               </h3>
             </Link>
@@ -34,9 +42,9 @@ const HomePage = () => {
               <img
                 src='../images/home-spray.jpg'
                 alt='Lineas de productos'
-                className='rounded-md'
+                className='rounded-md h-96 aspect-square object-cover'
               />
-              <h3 className='text-white drop-shadow-md uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
+              <h3 className='text-white drop-shadow-md bg-black/60 py-1 uppercase font-bold absolute bottom-5 inset-x-0 text-center'>
                 Home Spray
               </h3>
             </Link>
@@ -44,9 +52,11 @@ const HomePage = () => {
         </SectionBody>
       </Section>
 
-      <footer className='flex p-4 items-center gap-4 justify-center'>
-        <h3 className='text-sm'>Bougie Shop</h3>
-        <BsInstagram />
+      <footer className='flex py-6 items-center gap-2 justify-center bg-zinc-200'>
+        <h3 className='text-sm uppercase font-semibold'>Bougie Shop</h3>
+        <a href='https://www.instagram.com/bougieshopoficial' target='_blank'>
+          <BsInstagram />
+        </a>
       </footer>
 
       {/* <Section>
