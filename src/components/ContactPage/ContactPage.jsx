@@ -2,7 +2,7 @@ import Section from '../Section/Section';
 import SectionBody from '../Section/SectionBody';
 import SectionHeader from '../Section/SectionHeader';
 import SectionTitle from '../Section/SectionTitle';
-import ContactForm from './ContactForm';
+import ContactUs from './ContactUs';
 
 const ContactPage = () => {
   return (
@@ -11,7 +11,7 @@ const ContactPage = () => {
         <SectionTitle text='Contactanos' />
       </SectionHeader>
       <SectionBody>
-        <ContactForm />
+        <ContactUs />
       </SectionBody>
     </Section>
   );
