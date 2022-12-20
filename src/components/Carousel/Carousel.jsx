@@ -1,6 +1,6 @@
 const Carousel = () => {
   return (
-    <div id='carouselExampleControls' className='carousel slide relative ' data-bs-ride='carousel'>
+    <div id='carouselExampleControls' className='carousel slide relative' data-bs-ride='carousel'>
       <div className='md:max-h-[600px] carousel-inner relative w-full overflow-hidden'>
         <div className='carousel-item active relative float-left w-full'>
           <img src='../images/slide-1.png' className='block w-full' />

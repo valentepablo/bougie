@@ -18,12 +18,12 @@ const CartContainer = () => {
 
       <div
         className={`${
-          open ? 'translate-x-0' : 'translate-x-[600px]'
-        } transition duration-300 delay-150 ease-out fixed z-50 top-0 right-0 w-3/4 h-full bg-zinc-200 shadow-xl flex flex-col`}>
-        <div className='flex items-center justify-between bg-zinc-200 text-zinc-900 pl-4 pr-2 py-3 font-semibold text-sm shadow-md'>
-          <h3>Carrito de compras</h3>
+          open ? 'translate-x-0' : 'translate-x-[100%]'
+        } transition duration-300 delay-150 ease-out fixed z-50 top-0 right-0 w-3/4 sm:w-1/2 md:w-2/5 lg:w-1/3 2xl:w-1/4 h-full bg-zinc-200 shadow-xl flex flex-col`}>
+        <div className='flex items-center justify-between bg-zinc-200 text-zinc-900 pl-4 pr-2 py-3 font-semibold text-sm shadow-md md:h-20'>
+          <h3 className='md:text-lg'>Carrito de compras</h3>
           {products.length > 0 && (
-            <button onClick={clearCart} className='text-red-700 text-xs'>
+            <button onClick={clearCart} className='text-red-700 text-xs md:text-base'>
               Limpiar
             </button>
           )}
@@ -46,9 +46,11 @@ const CartContainer = () => {
           )}
         </div>
 
-        <div className='flex justify-between items-center bg-white border-t px-4 py-3 reverse-shadow-md'>
-          <p>Precio total:</p>
-          <p>{products.length === 0 ? '$ 0' : currencyFormatter.format(calculateTotalPrice())}</p>
+        <div className='flex justify-between items-center bg-white border-t px-4 py-3 reverse-shadow-md md:h-20'>
+          <p className='lg:text-lg'>Precio total:</p>
+          <p className='lg:text-lg'>
+            {products.length === 0 ? '$ 0' : currencyFormatter.format(calculateTotalPrice())}
+          </p>
         </div>
       </div>
     </>

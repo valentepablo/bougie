@@ -50,49 +50,57 @@ const ContactUs = () => {
           resetForm();
           setSubmitting(false);
         }}>
-        <Form ref={formRef} className='space-y-6 mt-2'>
-          <div className='relative'>
-            <div className='absolute flex items-center justify-center inset-y-0 w-10'>
-              <HiOutlineUser className='text-zinc-500/90' />
+        <Form ref={formRef} className='space-y-6 xl:space-y-10 mt-2'>
+          <div className='lg:flex lg:justify-between'>
+            <div className='hidden lg:flex items-center justify-center'>
+              <p className='text-zinc-400 ml-12 xl:ml-20 2xl:ml-28'>Datos de contacto</p>
             </div>
-            <Field
-              type='text'
-              name='nombre'
-              placeholder='*Ingresa tu nombre completo'
-              className='w-full rounded-md py-2 pl-10 pr-3 bg-zinc-50 border placeholder:text-sm placeholder:text-zinc-400'
-            />
-            <ErrorMessage
-              name='nombre'
-              component='p'
-              className='absolute mt-px ml-px text-[10px] text-red-500'
-            />
-          </div>
-          <div className='relative'>
-            <div className='absolute flex items-center justify-center inset-y-0 w-10'>
-              <HiOutlineEnvelope className='text-zinc-500/90' />
+            <div className='border-r border-zinc-200 mx-12 xl:mx-20 2xl:mx-28'></div>
+            <div className='lg:grow space-y-6 xl:space-y-10'>
+              <div className='relative'>
+                <div className='absolute flex items-center justify-center inset-y-0 w-10 xl:w-12'>
+                  <HiOutlineUser className='text-zinc-500/90 xl:w-5 xl:h-5' />
+                </div>
+                <Field
+                  type='text'
+                  name='nombre'
+                  placeholder='*Ingresa tu nombre completo'
+                  className='w-full rounded-md py-2 xl:py-5 pl-10 xl:pl-12 pr-3 bg-zinc-50 border placeholder:text-sm placeholder:text-zinc-400'
+                />
+                <ErrorMessage
+                  name='nombre'
+                  component='p'
+                  className='absolute mt-px ml-px text-[10px] xl:text-sm text-red-500'
+                />
+              </div>
+              <div className='relative'>
+                <div className='absolute flex items-center justify-center inset-y-0 w-10 xl:w-12'>
+                  <HiOutlineEnvelope className='text-zinc-500/90 xl:w-5 xl:h-5' />
+                </div>
+                <Field
+                  type='email'
+                  name='email'
+                  placeholder='*Ingresa un correo electronico'
+                  className='w-full rounded-md py-2 xl:py-5 pl-10 xl:pl-12 pr-3 bg-zinc-50 border placeholder:text-sm placeholder:text-zinc-400'
+                />
+                <ErrorMessage
+                  name='email'
+                  component='p'
+                  className='absolute mt-px ml-px text-[10px] xl:text-sm text-red-500'
+                />
+              </div>
+              <div className='relative'>
+                <div className='absolute flex items-center justify-center inset-y-0 w-10 xl:w-12'>
+                  <HiOutlineDevicePhoneMobile className='text-zinc-500/90 xl:w-5 xl:h-5' />
+                </div>
+                <Field
+                  type='text'
+                  name='telefono'
+                  placeholder='Ingresa un numero de contacto'
+                  className='w-full rounded-md py-2 xl:py-5 pl-10 xl:pl-12 pr-3 bg-zinc-50 border placeholder:text-sm placeholder:text-zinc-400'
+                />
+              </div>
             </div>
-            <Field
-              type='email'
-              name='email'
-              placeholder='*Ingresa un correo electronico'
-              className='w-full rounded-md py-2 pl-10 pr-3 bg-zinc-50 border placeholder:text-sm placeholder:text-zinc-400'
-            />
-            <ErrorMessage
-              name='email'
-              component='p'
-              className='absolute mt-px ml-px text-[10px] text-red-500'
-            />
-          </div>
-          <div className='relative'>
-            <div className='absolute flex items-center justify-center inset-y-0 w-10'>
-              <HiOutlineDevicePhoneMobile className='text-zinc-500/90' />
-            </div>
-            <Field
-              type='text'
-              name='telefono'
-              placeholder='Ingresa un numero de contacto'
-              className='w-full rounded-md py-2 pl-10 pr-3 bg-zinc-50 border placeholder:text-sm placeholder:text-zinc-400'
-            />
           </div>
           <div className='relative'>
             <Field
@@ -102,22 +110,19 @@ const ContactUs = () => {
               maxLength='250'
               placeholder='*Escribe un mensaje...'
               className='w-full rounded-md bg-zinc-50 border placeholder:text-sm placeholder:text-zinc-400 p-3 py-4'></Field>
-            {/* <span className='absolute top-0 right-1 text-[10px] text-zinc-400'>
-              {250 - } / 250
-            </span> */}
             <ErrorMessage
               name='mensaje'
               component='p'
-              className='absolute mt-px ml-px text-[10px] text-red-500'
+              className='absolute mt-px ml-px text-[10px] xl:text-sm text-red-500'
             />
           </div>
           <button
             type='submit'
-            className='flex items-center justify-center gap-1 w-full rounded-md bg-black text-zinc-200 uppercase text-xs font-bold h-12'>
+            className='flex items-center justify-center gap-1 w-full rounded-md bg-black text-zinc-200 uppercase text-xs font-bold h-12 lg:h-16'>
             Enviar
             <HiPaperAirplane />
           </button>
-          <span className='italic text-zinc-400 text-xs'>* Campos requeridos.</span>
+          <span className='italic text-zinc-400 text-xs xl:text-sm'>* Campos requeridos.</span>
         </Form>
       </Formik>
       <Toaster

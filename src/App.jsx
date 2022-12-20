@@ -6,20 +6,19 @@ import ProductListContainer from './components/ProductListContainer/ProductListC
 import CartContainer from './components/Cart/CartContainer';
 import { CartProvider } from './context/CartContext';
 import ContactPage from './components/ContactPage/ContactPage';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
     <Router>
-      <div className='pt-20'>
+      <div className='pt-20 min-h-full flex flex-col'>
         <CartProvider>
           <Navbar />
           <CartContainer />
           <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path='/productos/:categoria' element={<ProductListContainer />} />
-            <Route path='/productos/velas/:nombre' element={<ProductDetailContainer />} />
-            <Route path='/productos/difusores/:nombre' element={<ProductDetailContainer />} />
-            <Route path='/productos/home-spray/:nombre' element={<ProductDetailContainer />} />
+            <Route path='/:categoria' element={<ProductListContainer />} />
+            <Route path='/:categoria/:producto' element={<ProductDetailContainer />} />
             <Route path='/contacto' element={<ContactPage />} />
             <Route
               path='*'
@@ -27,6 +26,7 @@ const App = () => {
             />
           </Routes>
         </CartProvider>
+        <Footer />
       </div>
     </Router>
   );

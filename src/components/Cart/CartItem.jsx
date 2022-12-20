@@ -9,20 +9,26 @@ const CartItem = ({ product }) => {
         <img
           src={`../../images/${product.imagen}`}
           alt={product.categoryId}
-          className='w-20 aspect-square object-cover rounded'
+          className='w-20 aspect-square object-cover rounded xl:w-32'
         />
         <div className='grow'>
-          <p className='text-sm capitalize'>{product.nombre}</p>
-          <p className='text-xs capitalize text-zinc-500'>{product.aroma}</p>
-          <p className='text-xs text-zinc-500 mt-1'>Cantidad: {product.cantidad}</p>
+          <p className='text-sm capitalize xl:text-lg'>{product.nombre}</p>
+          <p className='text-xs capitalize text-zinc-500 xl:text-sm'>{product.aroma}</p>
+          <p className='text-xs text-zinc-500 mt-1 xl:text-sm'>Cantidad: {product.cantidad}</p>
           <div className='flex items-center justify-between'>
-            <p className='text-xs text-zinc-500'>u. {currencyFormatter.format(product.precio)}</p>
-            <p>{currencyFormatter.format(product.precio * product.cantidad)}</p>
+            <p className='text-xs text-zinc-500 xl:text-sm'>
+              u. {currencyFormatter.format(product.precio)}
+            </p>
+            <p className='xl:text-lg'>
+              {currencyFormatter.format(product.precio * product.cantidad)}
+            </p>
           </div>
         </div>
       </div>
       <div className='border-t px-4 py-2 flex items-center'>
-        <button className='text-xs text-red-700' onClick={() => removeItemFromCart(product)}>
+        <button
+          className='text-xs text-red-700 2xl:text-base'
+          onClick={() => removeItemFromCart(product)}>
           Eliminar
         </button>
       </div>

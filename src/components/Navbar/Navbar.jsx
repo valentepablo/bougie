@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { HiMenu } from 'react-icons/hi';
-import { FiShoppingCart } from 'react-icons/fi';
+import { HiShoppingCart } from 'react-icons/hi2';
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
 import { useState, useEffect, useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
@@ -21,29 +21,44 @@ const Navbar = () => {
   open ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'auto');
 
   return (
-    <div className='fixed inset-x-0 top-0 bg-zinc-200 shadow-lg flex items-center px-4 justify-between h-20 z-10 text-zinc-900'>
-      <Link to='/'>
-        <img src='../bougie-logo.png' className='w-24' />
-      </Link>
-
-      <ul className='md:flex hidden items-center gap-4'>
-        {categorias
-          .filter((categoria) => categoria.parentId === null)
-          .map((categoria) => (
-            <li className='capitalize py-1 px-2 cursor-pointer' key={categoria.id}>
-              <Link to={`/productos/${categoria.categoryId.split(' ').join('-')}`}>
-                {categoria.categoryId}
-              </Link>
+    <header className='fixed inset-x-0 top-0 bg-zinc-200 shadow-lg flex items-center px-4 justify-between h-20 z-10 text-zinc-900'>
+      <nav className='flex items-center justify-between w-full max-w-7xl mx-auto'>
+        <Link to='/'>
+          <img src='../bougie-logo.png' className='w-24' />
+        </Link>
+        {categorias.length > 0 && (
+          <ul className='md:flex hidden items-center md:gap-6 lg:gap-8'>
+            {categorias
+              .filter((categoria) => categoria.parentId === null)
+              .map((categoria) => (
+                <li
+                  className='capitalize py-1 cursor-pointer hover:text-zinc-500'
+                  key={categoria.id}>
+                  <Link to={`/${categoria.categoryId.split(' ').join('-')}`}>
+                    {categoria.categoryId}
+                  </Link>
+                </li>
+              ))}
+            <li className='py-1 cursor-pointer hover:text-zinc-500'>
+              <Link to='/sobre-nosotros'>Nosotros</Link>
             </li>
-          ))}
-
-        <li className='py-1 px-2 cursor-pointer'>
-          <Link to='/sobre-nosotros'>Nosotros</Link>
-        </li>
-        <li className='py-1 px-2 cursor-pointer'>
-          <Link to='/contacto'>Contacto</Link>
-        </li>
-      </ul>
+            <li className='py-1 cursor-pointer hover:text-zinc-500'>
+              <Link to='/contacto'>Contacto</Link>
+            </li>
+            <li className='py-1 cursor-pointer hover:text-zinc-500'>
+              <button
+                onClick={() => {
+                  setOpen(!open);
+                  openCart();
+                }}
+                className='bg-black flex items-center justify-center gap-2 text-zinc-200 font-bold w-full h-12 md:h-full md:py-3 hover:bg-zinc-800 rounded-md md:px-2'>
+                <HiShoppingCart />
+                <span className='uppercase text-xs'>Ver carrito</span>
+              </button>
+            </li>
+          </ul>
+        )}
+      </nav>
 
       <button onClick={() => setOpen(!open)} className='md:hidden relative z-40'>
         <HiMenu className='w-6 h-6' />
@@ -66,7 +81,7 @@ const Navbar = () => {
                 <li onClick={() => setOpen(!open)} key={categoria.id}>
                   <Link
                     className='flex items-center gap-4'
-                    to={`/productos/${categoria.categoryId.split(' ').join('-')}`}>
+                    to={`/${categoria.categoryId.split(' ').join('-')}`}>
                     <img className='w-8 h-8' src={`../images/${categoria.icon}`} />
                     <span className='capitalize'>{categoria.categoryId}</span>
                   </Link>
@@ -94,7 +109,7 @@ const Navbar = () => {
                 openCart();
               }}
               className='bg-black flex items-center justify-center gap-2 text-zinc-200 font-bold w-full h-12 rounded-md'>
-              <FiShoppingCart />
+              <HiShoppingCart />
               <span className='uppercase text-xs'>Ver carrito</span>
             </button>
           </div>
@@ -106,7 +121,7 @@ const Navbar = () => {
         className={`${
           open ? 'opacity-100 pointer-events-auto transition' : 'pointer-events-none opacity-0'
         } md:hidden fixed top-0 left-0 w-screen h-screen duration-200 bg-zinc-900/50 z-20`}></div>
-    </div>
+    </header>
   );
 };
 

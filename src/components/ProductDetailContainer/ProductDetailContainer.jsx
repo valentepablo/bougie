@@ -4,32 +4,32 @@ import { useState, useEffect } from 'react';
 import { getFirestore, getDocs, collection } from 'firebase/firestore';
 
 const ProductDetailContainer = () => {
-  const [producto, setProducto] = useState();
+  const [product, setProduct] = useState();
   const [loading, setLoading] = useState(true);
-  const { nombre } = useParams();
+  const { producto } = useParams();
 
   useEffect(() => {
-    const productName = nombre.split('-').join(' ');
+    const productName = producto.split('-').join(' ');
     const db = getFirestore();
     getDocs(collection(db, 'productos'))
       .then((result) =>
         result.docs
           .map((doc) => ({ id: doc.id, ...doc.data() }))
-          .find((producto) => producto.categoryId === productName)
+          .find((item) => item.categoryId === productName)
       )
       .then((result) => {
-        setProducto(result);
+        setProduct(result);
       });
 
     setLoading(false);
-  }, [nombre]);
+  }, [producto]);
 
   return (
     <>
       {loading ? (
         <div className='text-center mt-10'>Cargando...</div>
       ) : (
-        producto && <ProductDetail producto={producto} />
+        product && <ProductDetail producto={product} />
       )}
     </>
   );

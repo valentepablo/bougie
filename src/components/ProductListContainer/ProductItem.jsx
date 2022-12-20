@@ -2,18 +2,15 @@ import { Link } from 'react-router-dom';
 
 const ProductItem = ({ product }) => {
   return (
-    <Link
-      to={`/productos/${product.tipo.split(' ').join('-')}/${product.categoryId
-        .split(' ')
-        .join('-')}`}>
+    <Link to={`/${product.tipo.split(' ').join('-')}/${product.categoryId.split(' ').join('-')}`}>
       <li className='text-center'>
         <img
           src={`../images/${product.imagen}`}
           alt={product.nombre}
-          className='h-56 aspect-square object-cover rounded shadow-md'
+          className='h-56 md:h-[420px] aspect-square object-cover rounded shadow-md w-full'
         />
 
-        <h3 className='capitalize text-lg leading-tight font-semibold my-2'>
+        <h3 className='capitalize text-lg md:text-xl leading-tight font-semibold mt-2 md:mt-4'>
           {product.categoryId}
         </h3>
       </li>
