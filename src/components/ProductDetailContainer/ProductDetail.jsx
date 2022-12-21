@@ -95,7 +95,7 @@ const ProductDetail = ({ producto }) => {
                           className='fixed top-0 left-0 w-screen h-screen z-40'>
                           <Listbox.Options
                             static
-                            className='fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex flex-col max-h-60 w-3/4 md:w-1/3 md:max-h-80 md:overflow-y-auto bg-zinc-900 rounded-md divide-y divide-zinc-800 capitalize text-center text-zinc-300 '>
+                            className='fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex flex-col max-h-60 overflow-y-scroll w-3/4 md:w-1/3 md:max-h-80 md:overflow-y-auto bg-zinc-900 rounded-md divide-y divide-zinc-800 capitalize text-center text-zinc-300 '>
                             {producto.aromas.map((aroma) => (
                               <Listbox.Option
                                 value={aroma}
@@ -133,7 +133,7 @@ const ProductDetail = ({ producto }) => {
                   </div>
                   <button
                     onClick={addItem}
-                    className='bg-black mb-6 uppercase text-xs text-zinc-200 font-bold w-full h-12 md:h-16 rounded-md'>
+                    className='bg-black mb-6 uppercase text-xs lg:text-base text-zinc-200 font-bold w-full h-12 md:h-16 rounded-md'>
                     Comprar ahora
                   </button>
                 </div>

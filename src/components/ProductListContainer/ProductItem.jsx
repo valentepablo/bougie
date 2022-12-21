@@ -10,7 +10,7 @@ const ProductItem = ({ product }) => {
           className='h-56 md:h-[420px] aspect-square object-cover rounded shadow-md w-full'
         />
 
-        <h3 className='capitalize text-lg md:text-xl leading-tight font-semibold mt-2 md:mt-4'>
+        <h3 className='uppercase text-sm md:text-lg leading-tight font-bold mt-2 md:mt-4'>
           {product.categoryId}
         </h3>
       </li>
