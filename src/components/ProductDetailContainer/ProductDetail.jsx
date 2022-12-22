@@ -133,7 +133,7 @@ const ProductDetail = ({ producto }) => {
                   </div>
                   <button
                     onClick={addItem}
-                    className='bg-black mb-6 uppercase text-xs lg:text-base text-zinc-200 font-bold w-full h-12 md:h-16 rounded-md'>
+                    className='bg-black mb-6 uppercase text-xs lg:text-base text-zinc-200 font-bold w-full h-12 md:h-16 rounded-md hover:bg-zinc-800'>
                     Comprar ahora
                   </button>
                 </div>

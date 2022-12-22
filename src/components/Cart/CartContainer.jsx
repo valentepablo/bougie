@@ -46,11 +46,18 @@ const CartContainer = () => {
           )}
         </div>
 
-        <div className='flex justify-between items-center bg-white border-t px-4 py-3 reverse-shadow-md md:h-20'>
-          <p className='lg:text-lg'>Precio total:</p>
-          <p className='lg:text-lg'>
-            {products.length === 0 ? '$ 0' : currencyFormatter.format(calculateTotalPrice())}
-          </p>
+        <div className='bg-white border-t px-4 py-3 reverse-shadow-md space-y-3'>
+          <div className='flex justify-between items-center font-semibold'>
+            <p className='lg:text-lg'>Precio total:</p>
+            <p className='lg:text-lg'>
+              {products.length === 0 ? '$ 0' : currencyFormatter.format(calculateTotalPrice())}
+            </p>
+          </div>
+          <div>
+            <button className='bg-black uppercase text-xs md:text-sm  text-zinc-200 font-bold w-full h-10 md:h-12 rounded-md hover:bg-zinc-800'>
+              Proceder al pago
+            </button>
+          </div>
         </div>
       </div>
     </>
